@@ -12,7 +12,13 @@ For now mostly aimed at analysis of 10X multiome data [https://www.10xgenomics.c
 
 ## Alignment, calling cells, QC
 
+* Running cellranger-count, discussion on how it deals with nuclei RNA-seq data (including intronic reads)
+
 ## Clustering, dimensionality reduction, cell type calling and annotation
 * seurat v4
+* archR
+* deeplearning based methods
 
 ## Sample integration
+* How to integrate multiome samples
+* How to integrate samples with single modality datasets
