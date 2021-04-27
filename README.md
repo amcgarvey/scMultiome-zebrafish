@@ -21,4 +21,5 @@ For now mostly aimed at analysis of 10X multiome data [https://www.10xgenomics.c
 
 ## Sample integration
 * How to integrate multiome samples
+  * Using seurat for scRNA-seq modality (jupyternotebook? or notebook with summary, integrating, batch correction, visualisation, checking techinical aspects of integration (features, mitochondira)
 * How to integrate samples with single modality datasets
