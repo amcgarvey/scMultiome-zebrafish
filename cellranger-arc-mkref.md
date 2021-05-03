@@ -131,7 +131,7 @@ Once all the filtering is done and checked you need to generate a config file wi
     organism: "Danio rerio"
     genome: ["danrer11"]
     input_fasta: ["Danio_rerio.GRCz11.dna_sm.primary_assembly.fa.modified"]
-    input_gtf: ["Danio_rerio.GRCz11.100.gtf.filtered.chr"]
+    input_gtf: ["Danio_rerio.GRCz11.103.gtf.replaced.filtered.chr"]
     non_nuclear_contigs: ["chrMT"]
     input_motifs: "JASPAR2020_CORE_vertebrates_non-redundant_pfms_jaspar.txt.modified"
 }
