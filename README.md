@@ -8,7 +8,7 @@ For now mostly aimed at analysis of 10X multiome data [https://www.10xgenomics.c
 
 ## Making a reference 
 
-* [Creating a zebrafish (danrer11) Reference Package with cellranger-arc mkref](cellranger-arc-mkref.md)
+* [Creating a zebrafish (danrer11) Reference Package with cellranger-arc mkref](notebooks/cellranger-arc-mkref.md)
 
 ## Alignment, calling cells, QC
 
