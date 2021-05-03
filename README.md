@@ -20,8 +20,8 @@ Feature selection for scATAC-seq data is challenging in most species due to a la
 * Alternative feature selection that uses the single cell data without prior clustering/aggregation is [ScregSeg](https://github.com/BIMSBbioinfo/scregseg)
 
 ## Clustering, dimensionality reduction, cell type calling and annotation
-* seurat v4: specific adaptions for zebrafish such as finding mitochondrial features, annotation the ATAC modality [in this notebook](notebooks/Seuratv4_zebrafish_notebook.ipynb)
 [In progress]
+* seurat v4: specific adaptions for zebrafish such as finding mitochondrial features, annotation the ATAC modality [in this notebook](notebooks/Seuratv4_zebrafish_notebook.ipynb)
 * archR
 * [cisTopic](http://htmlpreview.github.io/?https://github.com/aertslab/cisTopic/blob/master/vignettes/10X_workflow.html) (for the dimensionality reduction of scATAC modality) . I had to make some adaptions to run this on multiome data [notebook](notebooks/cisTopic_multiome_ATAC_adaptions.ipynb)
 * [SEMITONES](https://github.com/ohlerlab/SEMITONES) for cell type annotation
