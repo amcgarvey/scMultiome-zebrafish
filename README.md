@@ -20,7 +20,7 @@ Feature selection for scATAC-seq data is challenging in most species due to a la
 * Alternative feature selection that uses the single cell data without prior clustering/aggregation is [ScregSeg](https://github.com/BIMSBbioinfo/scregseg)
 
 ## Clustering, dimensionality reduction, cell type calling and annotation
-* seurat v4: specific adaptions for zrbrafish such as finding mitochondrial features, annotation the ATAC modality [in this notebook](notebooks/Seuratv4_zebrafish_notebook.ipynb)
+* seurat v4: specific adaptions for zrbrafish such as finding mitochondrial features, annotation the ATAC modality [in this notebook](./notebooks/Seuratv4_zebrafish_notebook.ipynb)
 * archR
 * deeplearning based methods
 
