@@ -24,11 +24,15 @@ fasta_in="Danio_rerio.GRCz11.dna_sm.primary_assembly.fa"
 gtf="Danio_rerio.GRCz11.100.gtf"
 gtf_in="$(basename "$gtf").replaced"
 
-# Update the latest gtf release of danrer has around 2000 rows missing the gene_name attribute, which causes cellranger mkref to crash. I contacted ensembl about this and they said it is due to an updated calculation of annotation confidence using human orthalogues now the association drops below their minimum confidence. In order not to lose these protein coding genes, just becuase they don't have a confident annotation I wrote a little script to add in a gene_name attribute and fill it with the ensembl id.
+# Update the latest gtf release of danrer has around 2000 rows missing the gene_name attribute, which causes cellranger mkref to crash. 
+# I contacted ensembl about this and they said it is due to an updated calculation of annotation confidence using human orthalogues now 
+# the association drops below their minimum confidence. In order not to lose these protein coding genes, just becuase they don't have a 
+# confident annotation I wrote a little script to add in a gene_name attribute and fill it with the ensembl id.
 
 # write first metadata lines to file
 head -n5 "$gtf" | head > "$gtf_in"
-# skip metadata lines, if a row contains the gene_name attribute print that line to the file, if not add in a gene_name attribut and fill in with the ensembl id then append to the modified gtf file
+# skip metadata lines, if a row contains the gene_name attribute print that line to the file, if not add in a gene_name attribut and fill 
+# in with the ensembl id then append to the modified gtf file
 grep -vE "^#" "$gtf" | awk '{
         if ( $0 ~ /gene_name/)
                 print $0;
@@ -49,7 +53,10 @@ fasta_modified="$(basename "$fasta_in").modified"
 # 1. Replace metadata after space with original contig name, as in GENCODE (I'm not sure how necessary this first part is)
 # 2. Add "chr" to names of autosomes and sex chromosomes # sex chromosomes redundant for zebrafish
 # 3. Handle the mitochrondrial chromosome (in zebrafish GTF is is called chrMT, not chrM as used in human)
-cat "$fasta_in" | sed -E 's/^>(\S+).*/>\1 \1/' | sed -E 's/^>([0-9]+|[XY]) />chr\1 /' | sed -E 's/^>(K.*) />chr\1 /' | sed -E 's/^>MT />chrMT /' > "$fasta_modified"
+cat "$fasta_in" | sed -E 's/^>(\S+).*/>\1 \1/' | \
+sed -E 's/^>([0-9]+|[XY]) />chr\1 /' | \
+sed -E 's/^>(K.*) />chr\1 /' | \
+sed -E 's/^>MT />chrMT /' > "$fasta_modified"
 
 
 # Remove version suffix from transcript, gene, and exon IDs in order to match
